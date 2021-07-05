@@ -1,0 +1,49 @@
+.axis path,
+.axis line {
+ color: #ecddbb !important;
+}
+body{
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
+.container{
+    display: flex;
+    margin: 0px;
+}
+.container_1{
+    flex: 50%;
+
+}.container_2{
+    flex: 50%;
+
+
+}
+.container {
+    margin: 0px;
+}
+.col{
+        right: 0px;
+    display: inline-table;
+}
+
+img, svg{
+        right: 519px;
+    top: 0px;
+    position: absolute;
+    margin-bottom: 120px;
+}
+.ploting{
+    position: relative;
+    top: 120px;
+}
+.container_2 h2{
+    text-align: center;
+}
+.input.form-control{
+    padding: 0px;
+}
+.input-group{
+    margin-bottom: 20px;
+}
+.pole{
+    margin-bottom:30px ;
+}

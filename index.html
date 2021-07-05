@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Test</title>
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <script type="text/javascript" src="js/Zplane.js"></script>
+    <script type="text/javascript" src="js/chart/chart.js"></script>
+    <script type="text/javascript" src="js/plot.js"></script>
+    <script type="text/javascript" src="js/Ztransform.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.2/math.min.js"
+        integrity="sha512-X8Y5jFgsf/zxQN1X83Tdp1eHCzY52EfcYrDpbLxffRpF3Cyub7v9Jo0b5uwt1x6/h3ZnFzjL+yK12y1f7Q2zhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        div {
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" style="width: 1110px;;">
+        <div class="container_1">
+
+            <div id="circle" class="col  m-sm-5">
+
+                <div class="row mb-4">
+                    <div class="col">
+                        <button class="btn h-100 btn-danger" onclick="delete_zeros()">Clear Zeroes</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn h-100 btn-danger" onclick="delete_poles()">Clear poles</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn h-100 btn-danger" onclick="delete_all()">Clear<br> All</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="ploting container mt-5">
+                <div id="plot1" class="col">
+
+                </div>
+                <div id="plot2" class="col">
+
+                </div>
+                <div id="plot3" class="col">
+                    <div class="xx"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container_2">
+            <!-- pole -->
+            <div class="pole">
+                       <h3 style="position: relative; left: 25px;">Add Pole</h3>
+                       <button type="button" class="btn btn-success" onclick="add_real('nonConjPole')">Add</button>
+                      <div class="input-group">
+                      <span class="input-group-text">input</span>
+                      <input type="text" aria-label="First name" class="form-control" name="realPole" id="realPole" value="0">
+                      <input type="text" aria-label="Last name" class="form-control" name="imagPole" id="imagPole" value="0">
+                    </div>
+            </div>
+                        <!-- Add conjugate Pole -->
+            <div class="pole">
+                       <h3 style="position: relative; left: 25px;">conj Pole</h3>
+                       <button type="button" class="btn btn-success" onclick="add_conj('conjPole')">Add</button>
+                      <div class="input-group">
+                      <span class="input-group-text">input</span>
+                      <input type="text" aria-label="First name" class="form-control" name="poleReal" id="poleReal" value="0">
+                      <input type="text" aria-label="Last name" class="form-control" name="poleImag"  id="poleImag" value="0">
+                    </div>
+            </div>
+                                    <!-- Add conjugate Pole -->
+            <div class="pole">
+                       <h3 style="position: relative; left: 25px;">Add Zero</h3>
+                       <button type="button" class="btn btn-success" onclick="add_real('nonConjZero')">Add</button>
+                      <div class="input-group">
+                      <span class="input-group-text">input</span>
+                      <input type="text" aria-label="First name" class="form-control" name="realZero" id="realZero" value="0">
+                      <input type="text" aria-label="Last name" class="form-control" name="imagZero" id="imagZero" value="0">
+                    </div>
+            </div>
+                                                <!-- Add conjugate Pole -->
+            <div class="pole">
+                       <h3 style="position: relative; left: 25px;">conj Zero</h3>
+                       <button type="button" class="btn btn-success" onclick="add_conj('conjZero')">Add</button>
+                      <div class="input-group">
+                      <span class="input-group-text">input</span>
+                      <input type="text" aria-label="First name" name="zeroReal" id="zeroReal" class="form-control" value="0">
+                      <input type="text" aria-label="Last name" name="zeroImag" id="zeroImag" class="form-control" value="0">
+                    </div>
+            </div>
+
+            <div class="pole">
+                       <h3 style="position: relative; left: 25px;">All filter</h3>
+                       <button type="button" class="btn btn-success" onclick="add_custom_all_pass()">Add</button>
+                      <div class="input-group">
+                      <span class="input-group-text">input</span>
+                      <input type="text" aria-label="First name" name="zeroReal" id="allPassReal" class="form-control" value="0">
+                      <input type="text" aria-label="Last name"name="zeroReal" id="allPassImag" class="form-control" value="0">
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+<script type="text/javascript" src="js/our_func.js"></script>
+</body>
+
+</html>
